@@ -4,18 +4,18 @@
 using namespace std;
 
 class AtivoCampo { /*Classe para representar um ativo de campo.*/
-  private:
+  private:         /*Atributos privados da classe que não podem ser acessados diretamente fora da classe.*/
     string tag;
     bool bloqueado;
 
-  protected: /*Área do ativo que pode ser herdada por outras classes.*/
-    string area;
+  protected:     /*Área do ativo que pode ser herdada por outras classes.*/
+    string area; /*Protegito pra manter acesso por classes filhas, mas mantendo o encapsulamento.*/
 
     void redefinirArea(string novaArea) { /* Método para redefinir a área do ativo.*/
         area = novaArea;
     }
 
-  public:
+  public:                                                                                           /*Construtores e métodos públicos da classe.*/
     AtivoCampo(string TagNova, string AreaNova) : tag(TagNova), bloqueado(false), area(AreaNova) {} /*Construtor da classe.*/
 
     string getTag() const {
