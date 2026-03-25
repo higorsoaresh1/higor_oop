@@ -24,6 +24,8 @@ class AtuadorLinha {
         : tag(tagNova), area(areaNova) {}
 
     virtual ~AtuadorLinha() = default;
+    /* O virtual permite que o ponteiro manipule o mesmo construtor e os mesmos métodos em diferentes objetos durante tempo de compilação. */
+    /*Além disso garante que as informações da base fiquem "ocultas" para que as informações dos objetos sejam manipuladas, permitindo assim, o polimorfismo.*/
 
     string getTag() const {
         return tag;
